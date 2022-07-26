@@ -1,1 +1,1 @@
-../../.zshrc
+/home/cyrus/Desktop/projects/linuxfiles/config/.zshrc
