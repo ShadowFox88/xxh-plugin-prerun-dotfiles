@@ -21,12 +21,12 @@ do
     cp -Lr $CDIR/$f $build_dir/
 done
 
-if [ -x "$(command -v pip)" ]; then
+if [ -x "$(command -v python3)" ]; then
 
   PYTHONUSERBASE=$build_dir/home/.local pip install --user -I -r pip-requirements.txt
 
   # Fix python shebang
-  pypath=`readlink -f $(which python)`
+  pypath=`readlink -f $(which python3)`
   if [ -d "$build_dir/home/.local/bin" ]; then
     echo 'Fix PyPi packages shebang'
     sed -i '1s|#!'$pypath'|#!/usr/bin/env python|' $build_dir/home/.local/bin/*
